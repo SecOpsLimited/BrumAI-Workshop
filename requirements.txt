@@ -34,6 +34,7 @@ pykwalify==1.6.0
 coloredlogs==7.3
 ruamel.yaml==0.15.34
 flask==0.12
+rasa_core
 rasa_nlu
 
 ###additional
