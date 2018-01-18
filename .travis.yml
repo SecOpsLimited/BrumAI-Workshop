@@ -4,6 +4,7 @@ services:
  - docker
 before_install:
   - docker build -t secopsltd/brumairasa .
+install: true
 after_success:
  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
  - docker push secopsltd/brumairasa
