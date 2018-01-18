@@ -4,9 +4,7 @@ FROM python
 
 LABEL maintainer="rob@styles.to"
 
-#Install Python dependencies
-RUN git clone https://github.com/JustinaPetr/BrumAI-Workshop.git
-RUN cd BrumAI-Workshop && pip install -r requirements.txt
+#Install unchanging Python dependencies
 RUN python -m spacy download en
 RUN pip install rasa_core
 RUN git clone https://github.com/apixu/apixu-python
@@ -20,5 +18,9 @@ RUN apt-get install -y nodejs
 
 #Install rasa_nlu data visualisation tool
 RUN npm i -g rasa-nlu-trainer
+
+#Install requirements
+ADD requirements.txt
+RUN pip install -r requirements.txt
 
 CMD ["/bin/bash"]
